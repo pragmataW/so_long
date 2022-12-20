@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:06:18 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 14:50:10 by yciftci          ###   ########.fr       */
+/*   Updated: 2022/12/20 16:27:07 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,26 @@ int	object_ctr(char **map, int p_counter, int e_counter, int c_counter)
 	return (0);
 }
 
+int	is_rectangular(char **map, char *map_name)
+{
+	int	x_len;
+	int	y_len;
+
+	x_len = map_x_len(map_name);
+	y_len = map_y_len(map);
+	if (x_len == 0)
+		return (0);
+	if ((x_len >= 3 && y_len >= 5) || (x_len >= 5 && y_len >= 3))
+		return (1);
+	return (0);
+}
+
 int	map_control(char *map_name)
 {
 	char	**map;
 
 	map = read_map(map_name);
-	if (is_rectangular(map))
+	if (is_rectangular(map, map_name))
 		return (0);
 	if (!is_ber(map_name))
 		return (0);
