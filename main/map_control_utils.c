@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:34:51 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 15:01:22 by yciftci          ###   ########.fr       */
+/*   Updated: 2022/12/20 16:37:04 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,4 @@ int	map_x_len(char *map_name)
 	close(ctrl);
 	free (tmp);
 	return (len);
-}
-
-int	first_last_line(char *line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i] != '\0' && line[i] == '1')
-		i++;
-	if (line[i] == '\n')
-		return (1);
-	if (line[i] == '\0')
-		return (1);
-	return (0);
 }
