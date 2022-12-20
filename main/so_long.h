@@ -6,24 +6,25 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/16 16:44:15 by yciftci          ###   ########.fr       */
+/*   Updated: 2022/12/20 01:21:45 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
+# include "../libs/libft/libft.h"
 
-typedef struct	s_vars {
-	void	*mlx;
-	void	*win;
-}				t_vars;
+# include <signal.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+
+char	**read_map(void);
+int		map_x_len(void);
+size_t	ft_modify_strlen(const char *s);
+int     is_wall(char **map);
+int     first_last_line(char *line);
+int     normal_line(char *line)
 
 #endif

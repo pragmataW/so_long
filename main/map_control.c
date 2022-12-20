@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_control.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 22:46:36 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 01:13:57 by yciftci          ###   ########.fr       */
+/*   Created: 2022/12/19 16:06:18 by yciftci           #+#    #+#             */
+/*   Updated: 2022/12/20 01:27:30 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main()
+int	is_wall(char **map)
 {
-	char **map = read_map();
+	int i;
+	int x_len;
+	int y_len;
 
-	//ft_printf("%s", map[0]);
-	//ft_printf("%s", map[1]);
-	//ft_printf("%s", map[2]);
-	//ft_printf("%s", map[3]);
-	//ft_printf("%s", map[4]);
-	//ft_printf("%s", map[5]);
-
+	y_len = ft_strlen(map[0]);
+	x_len = map_x_len();
+	i = 0;
+	
+	while (map[i])
+	{
+		if (i == 0)
+			return (first_last_line(map[i]));
+		else if	(i == x_len - 1)	
+			return (first_last_line(map[i]));
+		else
+			return (normal_line(map[i]));
+	}
+	return(0);
 }
