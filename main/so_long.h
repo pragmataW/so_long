@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 01:21:45 by yciftci          ###   ########.fr       */
+/*   Updated: 2022/12/20 09:09:30 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		map_x_len(void);
 size_t	ft_modify_strlen(const char *s);
 int     is_wall(char **map);
 int     first_last_line(char *line);
-int     normal_line(char *line)
+int     normal_line(char *line);
+int     map_control(char *map_name);
+int     is_ber(char *map_name);
 
 #endif
