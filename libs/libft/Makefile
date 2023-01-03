@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yciftci < yciftci@student.42kocaeli.com    +#+  +:+       +#+         #
+#    By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 07:47:27 by yciftci           #+#    #+#              #
-#    Updated: 2022/10/18 12:03:45 by yciftci          ###   ########.fr        #
+#    Updated: 2023/01/02 13:45:46 by yciftci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

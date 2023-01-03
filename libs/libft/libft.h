@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:12 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 09:39:31 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/02 17:50:37 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+//for stack struct
+
+typedef struct s_stack
+{
+	int				x;
+	int				y;
+	struct s_stack	*next;			
+}				t_stack;
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -35,7 +44,6 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *dest, int c, size_t len);
-int		ft_strcmp(const char *s1, const char *s2);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
@@ -92,5 +100,8 @@ char	*get_raw_line(int fd, char *raw_str);
 char	*get_refined_str(char *raw_str);
 char	*get_new_raw_str(char *raw_str);
 char	*get_next_line(int fd);
-
+//stack data type functions
+void	ft_stack_push(t_stack **root, t_stack *new);
+t_stack	*ft_stack_new(int x, int y);
+t_stack	*ft_stack_pop(t_stack **root);
 #endif

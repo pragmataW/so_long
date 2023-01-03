@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_stack_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yciftci < yciftci@student.42kocaeli.com    +#+  +:+       +#+        */
+/*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 13:05:34 by yciftci           #+#    #+#             */
-/*   Updated: 2022/10/18 03:19:06 by yciftci          ###   ########.fr       */
+/*   Created: 2023/01/01 14:43:41 by yciftci           #+#    #+#             */
+/*   Updated: 2023/01/01 14:43:51 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_stack	*ft_stack_new(int x, int y)
 {
-	int	i;
+	t_stack	*new;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->x = x;
+	new->y = y;
+	new->next = NULL;
+	return (new);
 }

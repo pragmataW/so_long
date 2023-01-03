@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:06:18 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 16:27:07 by yciftci          ###   ########.fr       */
+/*   Updated: 2022/12/22 19:58:56 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,17 +100,6 @@ int	is_rectangular(char **map, char *map_name)
 
 int	map_control(char *map_name)
 {
-	char	**map;
-
-	map = read_map(map_name);
-	if (is_rectangular(map, map_name))
-		return (0);
-	if (!is_ber(map_name))
-		return (0);
-	if (!object_control(map))
-		return (0);
-	if (!object_ctr(map, 0, 0, 0))
-		return (0);
-	return (1);
-	free (map);
+	(void)map_name;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:34:51 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/20 16:37:04 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/02 16:21:35 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	map_x_len(char *map_name)
 	}
 	while (tmp)
 	{
+		free (tmp);
 		tmp = get_next_line(ctrl);
 		if (tmp)
 			len++;
@@ -79,4 +80,33 @@ int	map_x_len(char *map_name)
 	close(ctrl);
 	free (tmp);
 	return (len);
+}
+
+int	is_line(char **map, char *map_name, int i, int j)
+{
+	int	x_len;
+	int	y_len;
+
+	x_len = map_x_len(map_name);
+	y_len = map_y_len(map);
+	while (i < x_len)
+	{
+		j = 0;
+		while (j < y_len)
+		{
+			if (i == 0 || i == x_len - 1)
+			{
+				if (map[i][j] != '1')
+					return (0);
+			}
+			else
+			{
+				if ((j == 0 || j == y_len - 1) && map[i][j] != '1')
+					return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
