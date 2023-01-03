@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/03 02:33:27 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:46:44 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ t_stack	*p_locate(char **map, char *map_name);
 t_stack	*c_locate(char **map, char *map_name);
 int		collectable_counter(char **map, char *map_name);
 int		is_turnout(char **map, int x, int y);
+void	ft_moveright(char ***map, int *x, int *y);
+void	ft_moveleft(char ***map, int *x, int *y);
+void	ft_moveup(char ***map, int *x, int *y);
+void	ft_movedown(char ***map, int *x, int *y)
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:09:06 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/03 01:27:11 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/03 13:52:11 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,27 @@ int	is_turnout(char **map, int x, int y)
 	if (map[x][y - 1] == '0' || map[x][y - 1] == 'E' || map[x][y - 1] == 'C')
 		counter++;
 	return (counter);
+}
+
+char	**create_tmp_map(char *map_name)
+{
+	char	**r_map;
+	int		i;
+	int		j;
+
+	r_map = read_map(map_name);
+	i = 0;
+	while (i < map_x_len(map_name))
+	{
+		j = 0;
+		while (j < map_y_len(r_map))
+		{
+			if (r_map[i][j] == 'C' || r_map[i][j] == 'E'
+				|| r_map[i][j] == 'P')
+				r_map[i][j] = '0';
+			j++;
+		}
+		i++;
+	}
+	return (r_map);
 }
