@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/06 02:42:14 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/06 02:43:00 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,5 @@ int	path_find(char **map, char *map_name, int is_find_p)
 
 int	main(int argc, char *argv[])
 {
-	(void)argc;
-	char **map = read_map(argv[1]);
-	char **tmp = create_tmp_map(argv[1]);
-	t_stack *c = c_locate(map, argv[1]);
-	printf("%d", c->x);
-	int deneme = go_to_p(argv[1], tmp, c->x, c->y, map, 1);
-	ft_printf("%d\n", deneme);
 	return (0);
 }
