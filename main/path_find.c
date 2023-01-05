@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/06 02:43:00 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/06 02:44:46 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	path_find(char **map, char *map_name, int is_find_p)
 		c_cntr--;
 	}
 	free(p_l);
+	free(tmp_map);
 	if (c_cntr == 0 || c_l == NULL)
 		return (1);
 	return (0);
