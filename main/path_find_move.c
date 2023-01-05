@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 11:39:12 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/03 14:50:38 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/05 22:56:40 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_moveright(char ***map, int *x, int *y)
 		(*map)[*x][*y + 1] = 'C';
 	else
 		(*map)[*x][*y + 1] = 'E';
-	(*map)[*x][*y] = '0';
-	*y++;
+	(*map)[*x][*y] = '1';
+	(void)*y++;
 }
 
 void	ft_moveleft(char ***map, int *x, int *y)
@@ -29,8 +29,8 @@ void	ft_moveleft(char ***map, int *x, int *y)
 		(*map)[*x][*y - 1] = 'C';
 	else
 		(*map)[*x][*y - 1] = 'E';
-	(*map)[*x][*y] = '0';
-	*y--;
+	(*map)[*x][*y] = '1';
+	(void)*y--;
 }
 
 void	ft_moveup(char ***map, int *x, int *y)
@@ -39,8 +39,8 @@ void	ft_moveup(char ***map, int *x, int *y)
 		(*map)[*x - 1][*y] = 'C';
 	else
 		(*map)[*x - 1][*y] = 'E';
-	(*map)[*x][*y] = '0';
-	*x--;
+	(*map)[*x][*y] = '1';
+	(void)*x--;
 }
 
 void	ft_movedown(char ***map, int *x, int *y)
@@ -49,6 +49,6 @@ void	ft_movedown(char ***map, int *x, int *y)
 		(*map)[*x + 1][*y] = 'C';
 	else
 		(*map)[*x + 1][*y] = 'E';
-	(*map)[*x][*y] = '0';
-	*x++;
+	(*map)[*x][*y] = '1';
+	(void)*x++;
 }

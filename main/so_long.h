@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/03 14:46:44 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/05 15:48:22 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		is_turnout(char **map, int x, int y);
 void	ft_moveright(char ***map, int *x, int *y);
 void	ft_moveleft(char ***map, int *x, int *y);
 void	ft_moveup(char ***map, int *x, int *y);
-void	ft_movedown(char ***map, int *x, int *y)
+void	ft_movedown(char ***map, int *x, int *y);
+char	**create_tmp_map(char *map_name);
 
 #endif
