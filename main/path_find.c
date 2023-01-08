@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/08 22:25:13 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/08 22:38:14 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	is_possible(char **map, char *map_name, int is_valid)
 {
 	t_stack	*p_l;
 	t_stack *c_l;
+	t_stack *tmp;
 	char	**tmp_map;
 	int		c_counter;
 
@@ -60,15 +61,18 @@ int	is_possible(char **map, char *map_name, int is_valid)
 	{
 		tmp_map = create_tmp_map(map_name);
 		c_l = c_locate(map, map_name);
+		tmp = c_locate(map, map_name);
 		is_valid = path_find(tmp_map, c_l, p_l);
 		free(tmp_map);
 		if (is_valid == 1)
 		{
-			map[c_l->x][c_l->y] = '0';
+			map[tmp->x][tmp->y] = '0';
 			c_counter--;
+			free(c_l);
 		}
 		else
 			break;
+		ft_printf("%d\n", c_l->y);
 	}
 	if (c_counter > 0)
 		return (0);
