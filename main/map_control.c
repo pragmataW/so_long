@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:06:18 by yciftci           #+#    #+#             */
-/*   Updated: 2022/12/22 19:58:56 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 23:13:56 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,27 @@ int	is_rectangular(char **map, char *map_name)
 	return (0);
 }
 
-int	map_control(char *map_name)
+int	map_control(char **map, char *map_name)
 {
-	(void)map_name;
-	return (0);
+	if (!is_ber(map_name) || !object_control(map) || !object_ctr(map, 0, 0, 0))
+	{
+		ft_printf("Error!\nMap extention or object error.");
+		return (0);
+	}
+	if (!is_rectangular(map, map_name))
+	{
+		ft_printf("Error!\nYour map is not rectangular.");
+		return (0);
+	}
+	if (!is_line(map, map_name, 0, 0))
+	{
+		ft_printf("Error!\nWrong map border.");
+		return (0);
+	}
+	if (!is_possible(map, map_name, 1))
+	{
+		ft_printf("Error!\nYour map is impossible.");
+		return (0);
+	}
+	return (1);
 }

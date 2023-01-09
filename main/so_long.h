@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 20:10:38 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 22:53:38 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		map_y_len(char **map);
 int		is_line(char **map, char *map_name, int i, int j);
 int		first_last_line(char *line);
 int		normal_line(char *line);
-int		map_control(char *map_name);
+int		map_control(char **map, char *map_name);
 int		is_ber(char *map_name);
 int		object_control(char **map);
 int		object_ctr(char **map, int p_counter, int e_counter, int c_counter);

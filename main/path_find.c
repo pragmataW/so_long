@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 19:56:05 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 23:06:53 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@ void	free_double(t_variables *var, char **str, int check)
 		}
 		free (str);
 	}
+	else if (check == 1)
+	{
+		free(var->c_l);
+		free(var->tmp);
+	}
 	else
 	{
 		free(var->c_l);
 		free(var->tmp);
+		free(var);
 	}
 }
 
@@ -101,11 +107,11 @@ int	is_possible(char **map, char *map_name, int is_valid)
 			break ;
 	}
 	free(var->p_l);
-	free(var);
 	if (var->c_counter > 0)
 	{
-		free_double(var, var->tmp_map, 1);
+		free_double(var, var->tmp_map, 2);
 		return (0);
 	}
+	free(var);
 	return (1);
 }
