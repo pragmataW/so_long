@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 18:59:30 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 20:00:34 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,19 @@ int		object_ctr(char **map, int p_counter, int e_counter, int c_counter);
 int		is_rectangular(char **map, char *map_name);
 
 //path find
+void	free_double(t_variables *var, char **str, int check);
+void	no_way(t_stack **stack, int *x, int *y);
+void	var_init(t_variables *var, int *is_valid, char **map, char *map_name);
+int		path_find(char **tmp_map, t_stack *c_l, t_stack *p_l);
+int		is_possible(char **map, char *map_name, int is_valid);
 t_stack	*p_locate(char **map, char *map_name);
 t_stack	*c_locate(char **map, char *map_name);
 int		collectable_counter(char **map, char *map_name);
 int		is_turnout(char **map, int x, int y);
+char	**create_tmp_map(char *map_name);
 void	ft_moveright(char ***map, int *x, int *y);
 void	ft_moveleft(char ***map, int *x, int *y);
 void	ft_moveup(char ***map, int *x, int *y);
 void	ft_movedown(char ***map, int *x, int *y);
-char	**create_tmp_map(char *map_name);
-int		path_find(char **tmp_map, t_stack *c_l, t_stack *p_l);
 
 #endif
