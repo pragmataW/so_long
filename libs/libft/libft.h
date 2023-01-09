@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:33:12 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/02 17:50:37 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 15:13:32 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,5 @@ char	*get_next_line(int fd);
 void	ft_stack_push(t_stack **root, t_stack *new);
 t_stack	*ft_stack_new(int x, int y);
 t_stack	*ft_stack_pop(t_stack **root);
+void	ft_stack_clear(t_stack **stack);
 #endif

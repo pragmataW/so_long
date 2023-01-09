@@ -6,11 +6,33 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/08 22:38:14 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:01:42 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>
+
+void	free_double(t_variables *var, char **str, int check)
+{
+	int	i;
+
+	if (check == 0)
+	{
+		i = 0;
+		while (str[i])
+		{
+			free(str[i]);
+			i++;
+		}
+		free (str);
+	}
+	else
+	{
+		free(var->c_l);
+		free(var->tmp);
+	}
+}
 
 void	no_way(t_stack **stack, int *x, int *y)
 {
@@ -20,6 +42,15 @@ void	no_way(t_stack **stack, int *x, int *y)
 	*x = tmp->x;
 	*y = tmp->y;
 	free(tmp);
+}
+
+void	var_init(t_variables *var, int *is_valid, char **map, char *map_name)
+{
+	var->tmp_map = create_tmp_map(map_name);
+	var->c_l = c_locate(map, map_name);
+	var->tmp = c_locate(map, map_name);
+	*is_valid = path_find(var->tmp_map, var->c_l, var->p_l);
+	free_double(var, var->tmp_map, 0);
 }
 
 int	path_find(char **tmp_map, t_stack *c_l, t_stack *p_l)
@@ -42,53 +73,40 @@ int	path_find(char **tmp_map, t_stack *c_l, t_stack *p_l)
 		else
 			no_way(&stack, &c_l->x, &c_l->y);
 		if (c_l->x == p_l->x && c_l->y == p_l->y)
+		{
+			ft_stack_clear(&stack);
 			return (1);
+		}
 	}
 	return (0);
 }
 //is valid always will be start from one.
+
 int	is_possible(char **map, char *map_name, int is_valid)
 {
-	t_stack	*p_l;
-	t_stack *c_l;
-	t_stack *tmp;
-	char	**tmp_map;
-	int		c_counter;
+	t_variables	*var;
 
-	c_counter = collectable_counter(map, map_name);
-	p_l = p_locate(map, map_name);
-	while (c_counter != 0)
+	var = malloc(sizeof(t_variables));
+	var->c_counter = collectable_counter(map, map_name);
+	var->p_l = p_locate(map, map_name);
+	while (var->c_counter != 0)
 	{
-		tmp_map = create_tmp_map(map_name);
-		c_l = c_locate(map, map_name);
-		tmp = c_locate(map, map_name);
-		is_valid = path_find(tmp_map, c_l, p_l);
-		free(tmp_map);
+		var_init(var, &is_valid, map, map_name);
 		if (is_valid == 1)
 		{
-			map[tmp->x][tmp->y] = '0';
-			c_counter--;
-			free(c_l);
+			map[var->tmp->x][var->tmp->y] = '0';
+			var->c_counter--;
+			free_double(var, var->tmp_map, 1);
 		}
 		else
-			break;
-		ft_printf("%d\n", c_l->y);
+			break ;
 	}
-	if (c_counter > 0)
+	free(var->p_l);
+	free(var);
+	if (var->c_counter > 0)
+	{
+		free_double(var, var->tmp_map, 1);
 		return (0);
+	}
 	return (1);
-}
-
-int	main(int argc, char *argv[])
-{
-	char **map = read_map(argv[1]);
-	char **tmp_map = create_tmp_map(argv[1]);
-	//t_stack *c_l = c_locate(map, argv[1]);
-	//t_stack *p_l = p_locate(map, argv[1]);
-	//int deneme = path_find(tmp_map, c_l, p_l);
-	int deneme = is_possible(map, argv[1], 1);
-	printf("%d", deneme);
-	(void)argc;
-	(void)argv;
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/05 15:48:22 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/09 18:59:30 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+typedef struct s_variables
+{
+	t_stack	*p_l;
+	t_stack	*c_l;
+	t_stack	*tmp;
+	char	**tmp_map;
+	int		c_counter;
+}				t_variables;
 
 char	**read_map(char *map_name);
 int		map_x_len(char *map_name);
@@ -43,5 +52,6 @@ void	ft_moveleft(char ***map, int *x, int *y);
 void	ft_moveup(char ***map, int *x, int *y);
 void	ft_movedown(char ***map, int *x, int *y);
 char	**create_tmp_map(char *map_name);
+int		path_find(char **tmp_map, t_stack *c_l, t_stack *p_l);
 
 #endif
