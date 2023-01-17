@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/17 04:44:49 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/17 10:02:17 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,8 @@ void	ft_moveleft(char ***map, int *x, int *y);
 void	ft_moveup(char ***map, int *x, int *y);
 void	ft_movedown(char ***map, int *x, int *y);
 
+//!window and put img
+int		c_counter(char **map, char *map_name);
+int		e_counter(char **map, char *map_name);
+void	data_init(t_data *data, char *map_name);
 #endif
