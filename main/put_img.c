@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:18:26 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/17 11:19:58 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/17 11:57:22 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,4 @@ void	put_img(t_data *d, char **map, int i, int j)
 		}
 		i++;
 	}
-}
-
-int	main(void)
-{
-	t_data *d = malloc(sizeof(t_data));
-	data_init(d, "map.ber");
-	put_img(d, d->map, 0, 0);
-	//void *win_ptr = mlx_new_window(d->m_p, 1500, 750, "Deneme");
-	//mlx_put_image_to_window(d->m_p, d->w_p, d->c_img, 10, 10);
-	mlx_loop(d->m_p);
-	return (0);
 }

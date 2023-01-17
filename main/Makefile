@@ -6,7 +6,7 @@
 #    By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:00:11 by msariasl          #+#    #+#              #
-#    Updated: 2023/01/17 10:35:25 by yciftci          ###   ########.fr        #
+#    Updated: 2023/01/17 13:45:50 by yciftci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(NAME): $(SO_LONG_FILES) $(SO_LONG_OBJ)
 		@cp ../libs/minilibx/libmlx.a .
 		@cp ../libs/libft/libft.a .
 		@ar -rcs $(NAME) *.o
-		@gcc put_img.c libmlx.a so_long.a libft.a -framework OpenGL -framework AppKit
+		@gcc $(FLAGS) -o so_long so_long.c libmlx.a so_long.a libft.a -framework OpenGL -framework AppKit
 		@rm -rf libft.a libmlx.a so_long.a
 		@make fclean
 
