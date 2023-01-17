@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 22:53:38 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/17 04:44:49 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 # define SO_LONG_H
 
 # include "../libs/libft/libft.h"
+# include "../libs/minilibx/mlx.h"
 
 # include <signal.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+# define IMG_SIZE 50
+# define BG "../textures/bg.xpm"
+# define W "../textures/wall.xpm"
+# define P "../textures/main_c.xpm"
+# define E "../textures/exit_1.xpm"
+# define C "../textures/collectable_1.xpm"
 
 typedef struct s_variables
 {
@@ -29,6 +37,21 @@ typedef struct s_variables
 	char	**tmp_map;
 	int		c_counter;
 }				t_variables;
+
+typedef struct s_data
+{
+	char	**map;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	char	*player_img;
+	char	*exit_img;
+	char	*collectable_img;
+	char	*wall_img;
+	char	*bg_img;
+	int		coin_count;
+	int		exit_control;
+}				t_data;
+
 //!map control and map control utils
 char	**read_map(char *map_name);
 int		map_x_len(char *map_name);

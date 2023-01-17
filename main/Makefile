@@ -6,23 +6,31 @@
 #    By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:00:11 by msariasl          #+#    #+#              #
-#    Updated: 2023/01/05 22:41:50 by yciftci          ###   ########.fr        #
+#    Updated: 2023/01/17 04:24:46 by yciftci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long.a
 SO_LONG_FILES = $(shell find . -name "*.c" ! -name "so_long.c")
-LIBFT_FILES = $(shell find ../libs/libft -name "*.c")
+SO_LONG_OBJ := $(SO_LONG_FILES:%.c=%.o)
 
+CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(SO_LONG_FILES) $(LIBFT_FILES) so_long.c
-		@gcc $(FLAGS) -c $(LIBFT_FILES) $(SO_LONG_FILES)
+$(NAME): $(SO_LONG_FILES) $(SO_LONG_OBJ)
+		@make -C ../libs/minilibx
+		@make -C ../libs/libft
+		@cp ../libs/minilibx/libmlx.a .
+		@cp ../libs/libft/libft.a .
 		@ar -rcs $(NAME) *.o
-		@rm -rf *.o
+		@gcc -g init.c libmlx.a so_long.a libft.a -framework OpenGL -framework AppKit
+		@rm -rf libft.a libmlx.a so_long.a
+		@make fclean
 
 clean:
 	@rm -rf *.o
+	@make clean -C ../libs/minilibx/
+	@make clean -C ../libs/libft
 
 fclean: clean
 	@rm -rf $(NAME)
