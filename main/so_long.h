@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/17 10:02:17 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/17 10:28:51 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ typedef struct s_variables
 typedef struct s_data
 {
 	char	**map;
-	void	*mlx_ptr;
-	void	*win_ptr;
-	char	*player_img;
-	char	*exit_img;
-	char	*collectable_img;
-	char	*wall_img;
+	void	*m_p;
+	void	*w_p;
+	char	*p_img;
+	char	*e_img;
+	char	*c_img;
+	char	*w_img;
 	char	*bg_img;
 	int		coin_count;
 	int		exit_control;

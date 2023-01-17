@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:06:36 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/17 10:01:06 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/17 11:00:48 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ void	data_init(t_data *data, char *map_name)
 	data->map = read_map(map_name);
 	w = map_y_len(data->map) * 50;
 	h = map_x_len("map.ber") * 50;
-	data->mlx_ptr = mlx_init();
-	data->win_ptr = mlx_new_window(data->mlx_ptr, w, h, "Agrili Keno");
+	data->m_p = mlx_init();
+	data->w_p = mlx_new_window(data->m_p, w, h, "Agrili Keno!");
 	data->coin_count = c_counter(data->map, map_name);
 	data->exit_control = e_counter(data->map, map_name);
-	data->bg_img = mlx_xpm_file_to_image(data->mlx_ptr, BG, &w, &h);
-	data->wall_img = mlx_xpm_file_to_image(data->mlx_ptr, W, &w, &h);
-	data->player_img = mlx_xpm_file_to_image(data->mlx_ptr, P, &w, &h);
-	data->exit_img = mlx_xpm_file_to_image(data->mlx_ptr, E, &w, &h);
-	data->collectable_img = mlx_xpm_file_to_image(data->mlx_ptr, C, &w, &h);
+	data->bg_img = mlx_xpm_file_to_image(data->m_p, BG, &w, &h);
+	data->w_img = mlx_xpm_file_to_image(data->m_p, W, &w, &h);
+	data->p_img = mlx_xpm_file_to_image(data->m_p, P, &w, &h);
+	data->e_img = mlx_xpm_file_to_image(data->m_p, E, &w, &h);
+	data->c_img = mlx_xpm_file_to_image(data->m_p, C, &w, &h);
 }
