@@ -6,7 +6,7 @@
 #    By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:00:11 by msariasl          #+#    #+#              #
-#    Updated: 2023/01/20 15:07:01 by yciftci          ###   ########.fr        #
+#    Updated: 2023/01/20 15:44:06 by yciftci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf so_long
 
 re: fclean $(NAME)
 
