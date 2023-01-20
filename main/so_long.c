@@ -6,11 +6,16 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:46:36 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 13:25:43 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 14:59:34 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	close_game(void)
+{
+	exit(write(1, "Oyunu Kapattiniz! Vaz mi gectin?", 32));
+}
 
 int	main(int argc, char *argv[])
 {
@@ -27,5 +32,6 @@ int	main(int argc, char *argv[])
 	data_init(data, argv[1]);
 	put_img(data, data->map, 0, 0);
 	mlx_key_hook(data->w_p, controller, data);
+	mlx_hook(data->w_p, 17, 0, close_game, data);
 	mlx_loop(data->m_p);
 }

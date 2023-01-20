@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:48:23 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 13:23:27 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 14:59:29 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	controller(int key, t_data *data)
 		control_up(data, 'l');
 	else if (key == 1)
 		control_up(data, 'd');
+	else if (key == 53)
+		exit(write(1, "Oyunu Kapattiniz! Vaz mi gectin?", 32));
 	free(data->p);
 	free(data->exit_l);
 	data->p = p_locate(data->map);
