@@ -6,7 +6,7 @@
 #    By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:00:11 by msariasl          #+#    #+#              #
-#    Updated: 2023/01/20 02:26:13 by yciftci          ###   ########.fr        #
+#    Updated: 2023/01/20 15:07:01 by yciftci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ $(NAME): $(SO_LONG_FILES) $(SO_LONG_OBJ)
 		@gcc $(FLAGS) -o so_long so_long.c libmlx.a so_long.a libft.a -framework OpenGL -framework AppKit
 		@rm -rf libft.a libmlx.a so_long.a
 		@make fclean
+
+all: $(NAME)
 
 clean:
 	@rm -rf *.o

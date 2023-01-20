@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:48:23 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 14:59:29 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:00:46 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int	controller(int key, t_data *data)
 	free(data->exit_l);
 	data->p = p_locate(data->map);
 	data->exit_l = e_locate(data->map);
+	return (0);
 }

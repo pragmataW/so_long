@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 22:46:36 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 14:59:34 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:00:33 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	close_game(void)
 {
 	exit(write(1, "Oyunu Kapattiniz! Vaz mi gectin?", 32));
+	return (1);
 }
 
 int	main(int argc, char *argv[])
