@@ -6,14 +6,14 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:09:06 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 18:03:51 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 12:31:06 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libs/libft/libft.h"
 #include "so_long.h"
 
-t_stack	*p_locate(char **map, char *map_name)
+t_stack	*p_locate(char **map)
 {
 	t_stack	*rvalue;
 	int		x_counter;
@@ -21,7 +21,7 @@ t_stack	*p_locate(char **map, char *map_name)
 
 	rvalue = (t_stack *)malloc(sizeof(t_stack));
 	x_counter = 0;
-	while (x_counter < map_x_len(map_name))
+	while (map[x_counter])
 	{
 		y_counter = 0;
 		while (map[x_counter][y_counter] != '\0')

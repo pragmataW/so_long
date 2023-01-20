@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 22:53:09 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/09 23:06:53 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 12:31:51 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	is_possible(char **map, char *map_name, int is_valid)
 
 	var = malloc(sizeof(t_variables));
 	var->c_counter = collectable_counter(map, map_name);
-	var->p_l = p_locate(map, map_name);
+	var->p_l = p_locate(map);
 	while (var->c_counter != 0)
 	{
 		var_init(var, &is_valid, map, map_name);
