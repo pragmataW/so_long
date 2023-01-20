@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:48:23 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 15:00:46 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:30:17 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	control_up(t_data *d, char direction)
 	int	y;
 
 	loc_init(&x, &y, d->p, direction);
+	d->step++;
+	ft_printf("%d\n", d->step);
 	if (d->map[x][y] == '1')
 		return ;
 	if (d->map[x][y] == '0')

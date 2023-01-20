@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:38:38 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 13:25:36 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:28:10 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_data
 	t_stack	*exit_l;
 	int		coin_count;
 	int		exit_control;
+	int		step;
 }				t_data;
 
 //!map control and map control utils

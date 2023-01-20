@@ -6,7 +6,7 @@
 /*   By: yciftci <yciftci@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:06:36 by yciftci           #+#    #+#             */
-/*   Updated: 2023/01/20 12:33:16 by yciftci          ###   ########.fr       */
+/*   Updated: 2023/01/20 15:28:22 by yciftci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	data_init(t_data *data, char *map_name)
 	data->exit_control = e_counter(data->map, map_name);
 	data->p = p_locate(data->map);
 	data->exit_l = e_locate(data->map);
+	data->step = 0;
 	data->bg_img = mlx_xpm_file_to_image(data->m_p, BG, &w, &h);
 	data->w_img = mlx_xpm_file_to_image(data->m_p, W, &w, &h);
 	data->p_img = mlx_xpm_file_to_image(data->m_p, P, &w, &h);
