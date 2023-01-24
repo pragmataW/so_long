@@ -25,7 +25,6 @@ $(NAME): $(SO_LONG_FILES) $(SO_LONG_OBJ)
 		@ar -rcs $(NAME) *.o
 		@gcc $(FLAGS) -o so_long so_long.c libmlx.a so_long.a libft.a -framework OpenGL -framework AppKit
 		@rm -rf libft.a libmlx.a so_long.a
-		@make fclean
 
 all: $(NAME)
 
